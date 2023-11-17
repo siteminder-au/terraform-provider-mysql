@@ -1,7 +1,7 @@
 steps:
   - label: ':docker: Build'
     command: ./ci-scripts/build.sh
-    artifact_paths: "/go/bin/terraform-provider-mysql"
+    artifact_paths: "bin/terraform-provider-mysql"
 
   - wait
 

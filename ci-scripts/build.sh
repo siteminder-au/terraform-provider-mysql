@@ -24,7 +24,7 @@ docker run \
   -u root \
   -w /app \
   golang:1.12 \
-  sh -c "apt-get update && apt-get -y upgrade && make build"
+  sh -c "apt-get update && apt-get -y upgrade && make build && mkdir -p bin && cp /go/bin/terraform-provider-mysql bin/"
 
 echo "--- $(date '+%H:%M:%S') :docker: Cleanup..."
 docker rm -vf ${BUILDKITE_PIPELINE_SLUG}.$$

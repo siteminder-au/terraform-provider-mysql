@@ -8,13 +8,13 @@ f_docker_push() {
   docker push "${IMAGE_REPOSITORY}:${NEW_TAG}"
 }
 
-mkdir -p /go/bin
-rm -rf /go/bin/*
+mkdir -p bin
+rm -rf bin/*
 
 set -e
 
 echo "--- $(date '+%H:%M:%S') Downloading provider..."
-buildkite-agent artifact download "/go/bin/terraform-provider-mysql" .
+buildkite-agent artifact download "bin/terraform-provider-mysql" .
 
 echo "--- $(date '+%H:%M:%S') Building Image: ${IMAGE_REPOSITORY}:${IMAGE_TAG}"
 docker build -t "${IMAGE_REPOSITORY}:${IMAGE_TAG}" .
