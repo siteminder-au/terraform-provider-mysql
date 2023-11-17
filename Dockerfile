@@ -1,4 +1,4 @@
-FROM golang:0.12
+FROM golang:1.12
 
 RUN mkdir -p /provider
 
