@@ -8,8 +8,8 @@ f_docker_push() {
   docker push "${IMAGE_REPOSITORY}:${NEW_TAG}"
 }
 
-mkdir -p build/libs
-rm -rf build/libs/*
+mkdir -p /go/bin
+rm -rf /go/bin/*
 
 set -e
 
