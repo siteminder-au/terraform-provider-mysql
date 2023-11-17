@@ -24,7 +24,9 @@ docker run \
   -u root \
   -w /app \
   golang:1.12 \
-  apt-get update && apt-get -y upgrade && make build
+  apt-get update \ 
+  apt-get -y upgrade \ 
+  make build
 
 echo "--- $(date '+%H:%M:%S') :docker: Cleanup..."
 docker rm -vf ${BUILDKITE_PIPELINE_SLUG}.$$
