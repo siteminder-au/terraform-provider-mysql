@@ -13,9 +13,6 @@ rm -rf bin/*
 
 set -e
 
-echo "--- $(date '+%H:%M:%S') Downloading provider..."
-buildkite-agent artifact download "bin/terraform-provider-mysql" .
-
 echo "--- $(date '+%H:%M:%S') Building Image: ${IMAGE_REPOSITORY}:${IMAGE_TAG}"
 docker build --build-arg GOOS="$BINARY_OS" --build-arg GOARCH="$BINARY_ARCH" -t "${IMAGE_REPOSITORY}:${IMAGE_TAG}" .
 
