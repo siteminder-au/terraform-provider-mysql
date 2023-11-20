@@ -3,7 +3,7 @@ steps:
     command: ./ci-scripts/build.sh
     artifact_paths: "bin/terraform-provider-mysql"
     env:
-      BINARY_OS: windows
+      BINARY_OS: linux
       BINARY_ARCH: amd64
 
   - wait
