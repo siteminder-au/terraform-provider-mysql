@@ -1,15 +1,8 @@
 steps:
-  - label: ':docker: Build'
-    command: ./ci-scripts/build.sh
-    artifact_paths: "bin/terraform-provider-mysql"
-    env:
-      BINARY_OS: linux
-      BINARY_ARCH: amd64
-
-  - wait
-
   - label: ':docker: Push Image'
     command: ./ci-scripts/push-image.sh
     env:
+      BINARY_OS: linux
+      BINARY_ARCH: amd64
       IMAGE_REPOSITORY: 278521702583.dkr.ecr.us-west-2.amazonaws.com/iops/terraform-provider-mysql
       IMAGE_TAG: "build-${BUILDKITE_BUILD_NUMBER}"
