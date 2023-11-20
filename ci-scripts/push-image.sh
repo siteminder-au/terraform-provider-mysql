@@ -8,9 +8,6 @@ f_docker_push() {
   docker push "${IMAGE_REPOSITORY}:${NEW_TAG}"
 }
 
-mkdir -p bin
-rm -rf bin/*
-
 set -e
 
 echo "--- $(date '+%H:%M:%S') Building Image: ${IMAGE_REPOSITORY}:${IMAGE_TAG}"
