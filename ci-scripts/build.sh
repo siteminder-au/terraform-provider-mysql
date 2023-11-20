@@ -21,6 +21,8 @@ docker run \
   -v ${PWD}:/app \
   -e BUILDKITE_TAG \
   -e APP_VERSION=$APP_VERSION \
+  -e GOOS=$BINARY_OS \
+  -e GOARCH=$BINARY_ARCH \
   -u root \
   -w /app \
   golang:1.12 \
