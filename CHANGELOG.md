@@ -1,3 +1,8 @@
+## 1.9.2 (November 15, 2023)
+
+IMPROVEMENTS:
+* Allow `GRANT` privilege without specifying role on MySQL 8.x.
+
 ## 1.9.1 (Unreleased)
 ## 1.9.0 (November 07, 2019)
 
